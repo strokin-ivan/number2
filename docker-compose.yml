@@ -23,9 +23,9 @@ services:
     restart: unless-stopped
     environment:
       - WORDPRESS_DB_HOST=mysql:3306
-      - WORDPRESS_DB_USER=$MYSQL_USER
-      - WORDPRESS_DB_PASSWORD=$MYSQL_PASSWORD
-      - WORDPRESS_DB_NAME=$MYSQL_DATABASE
+      - WORDPRESS_DB_USER=wp_db_user
+      - WORDPRESS_DB_PASSWORD=password
+      - WORDPRESS_DB_NAME=wp_db
     volumes:
       - www-html:/var/www/html
     networks:
