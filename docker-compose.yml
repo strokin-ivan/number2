@@ -30,7 +30,7 @@ services:
       - app
 
   nginx:
-    image: nginx:1.19.8-alpine
+    image: nginx:latest
     depends_on:
       - wp
     container_name: nginx-1.19.8-alpine
