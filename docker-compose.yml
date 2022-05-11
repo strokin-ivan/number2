@@ -5,10 +5,13 @@ services:
     image: mysql:8.0
     container_name: mysql
     restart: unless-stopped
-    env_file: .env
+    environment:
+      - MYSQL_ROOT_PASSWORD = root
+      - MYSQL_USER = wp_db_user
+      - MYSQL_PASSWORD = password
+      - MYSQL_DATABASE = wp_db
     volumes:
       - dbfile:/var/lib/mysql
-    command: '--default-authentication-plugin=mysql_native_password'
     networks:
       - app
 
@@ -18,7 +21,6 @@ services:
     depends_on:
       - mysql
     restart: unless-stopped
-    env_file: .env
     environment:
       - WORDPRESS_DB_HOST=mysql:3306
       - WORDPRESS_DB_USER=$MYSQL_USER
