@@ -1,15 +1,11 @@
-version: '3.9'
+version: "3"
 
 services:
   mysql:
     image: mysql:8.0
     container_name: mysql
     restart: unless-stopped
-    environment:
-      MYSQL_ROOT_PASSWORD=password
-      MYSQL_USER=wp_user
-      MYSQL_PASSWORD=wppassword
-      MYSQL_DATABASE=wp_db
+    env_file: .env
     volumes:
       - dbfile:/var/lib/mysql
     networks:
@@ -21,6 +17,7 @@ services:
     depends_on:
       - mysql
     restart: unless-stopped
+    env_file: .env
     environment:
       - WORDPRESS_DB_HOST=mysql:3306
       - WORDPRESS_DB_USER=$MYSQL_USER
