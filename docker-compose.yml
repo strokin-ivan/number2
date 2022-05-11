@@ -6,10 +6,10 @@ services:
     container_name: mysql
     restart: unless-stopped
     environment:
-      - MYSQL_ROOT_PASSWORD = root
-      - MYSQL_USER = wp_db_user
-      - MYSQL_PASSWORD = password
-      - MYSQL_DATABASE = wp_db
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=wp_db_user
+      - MYSQL_PASSWORD=password
+      - MYSQL_DATABASE=wp_db
     volumes:
       - dbfile:/var/lib/mysql
     networks:
