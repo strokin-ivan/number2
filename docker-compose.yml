@@ -48,6 +48,7 @@ services:
 volumes:
   www-html:
   dbfile:
+  nginx:
 
 networks:
   app:
