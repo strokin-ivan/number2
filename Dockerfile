@@ -1,6 +1,6 @@
 FROM node:14.18.1-slim
 
-RUN yum update && yum upgrade-yq make
+RUN -yq make
 
 WORKDIR /app
 
