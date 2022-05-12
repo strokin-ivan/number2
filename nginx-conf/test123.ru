@@ -1,8 +1,6 @@
 server {
-        listen 80;
-        listen [::]:80;
-
-        server_name vanesiolse.ru www.vanesiolse.ru;
+        listen 443;
+        listen [::]:443;
 
         index index.php index.html index.htm;
 
