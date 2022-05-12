@@ -40,7 +40,10 @@ services:
       - wordpress:/var/www/html
       - ./nginx-conf:/etc/nginx/conf.d
     networks:
-      wordpress:
+      - app-network
+
+volumes:
+  wordpress:
   dbdata:
   nginx:
 
